@@ -19,7 +19,7 @@ jobs:
           image_type: minimal-raw
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: os-image
           path: output/fedora-41-minimal-raw-x86_64/xz/disk.raw.xz
