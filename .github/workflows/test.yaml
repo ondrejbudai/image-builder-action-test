@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Image Builder Action
-        uses: ondrejbudai/image-builder-action@a81d41c1364b1998395cc4e6322f8f1dcfa25c67
+        uses: ondrejbudai/image-builder-action@015485277f24b67527e07d5e4addaec59cf5a76f
         with:
           distro: fedora-41
           image_type: minimal-raw
