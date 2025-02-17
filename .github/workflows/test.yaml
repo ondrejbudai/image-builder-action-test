@@ -1,0 +1,25 @@
+name: Build a Fedora 41 minimal raw image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Image Builder Action
+        uses: ondrejbudai/image-builder-action@a81d41c1364b1998395cc4e6322f8f1dcfa25c67
+        with:
+          distro: fedora-41
+          image_type: minimal-raw
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: os-image
+          path: output/fedora-41-minimal-raw-x86_64/xz/disk.raw.xz
